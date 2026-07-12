@@ -10,9 +10,6 @@ class BranchVisualizer < Formula
   depends_on :macos
 
   def install
-    # Homebrew's build sandbox blocks writes to ~/.cargo and ~/.bun
-    ENV["CARGO_HOME"] = buildpath/".cargo"
-    ENV["BUN_INSTALL_CACHE_DIR"] = buildpath/".bun-cache"
     system "bun", "install", "--frozen-lockfile"
     system "bun", "run", "tauri", "build", "--bundles", "app"
     prefix.install "src-tauri/target/release/bundle/macos/Branch Visualizer.app"
