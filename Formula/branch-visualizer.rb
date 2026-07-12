@@ -15,18 +15,16 @@ class BranchVisualizer < Formula
     prefix.install "src-tauri/target/release/bundle/macos/Branch Visualizer.app"
   end
 
-  # Formulae don't install into /Applications (only casks do), but a menu bar
-  # app is invisible to Spotlight and Login Items from the Cellar — so link it.
-  def post_install
-    system "ln", "-sf", opt_prefix/"Branch Visualizer.app", "/Applications"
-  end
-
   def caveats
     <<~EOS
-      Branch Visualizer was linked into /Applications (a symlink to the
-      Homebrew install). Launch it from Spotlight, or:
+      Branch Visualizer is a menu bar app. To make it visible to Spotlight
+      and Login Items, link it into /Applications:
 
-        open "/Applications/Branch Visualizer.app"
+        ln -sf "#{opt_prefix}/Branch Visualizer.app" /Applications
+
+      Or launch it directly:
+
+        open "#{opt_prefix}/Branch Visualizer.app"
     EOS
   end
 
