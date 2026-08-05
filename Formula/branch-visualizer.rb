@@ -1,8 +1,8 @@
 class BranchVisualizer < Formula
   desc "macOS menu bar app for git branches, worktrees, and commit graphs"
   homepage "https://github.com/wannabeepolymath/git-branch-Visualizer"
-  url "https://github.com/wannabeepolymath/git-branch-Visualizer/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "6c41f29c1a2c800033a3c7cfcb820fc15bb2a623a203a7a97d87b09c92dfd24f"
+  url "https://github.com/wannabeepolymath/git-branch-Visualizer/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "dd95c237dfe740c9b12da32bd461b93c1af9a5d1b3dc8ef0734607fe05d0a473"
   license "MIT"
 
   depends_on "bun" => :build
